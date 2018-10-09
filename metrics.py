@@ -1,7 +1,6 @@
 from flask import Response
 from dateutil import parser
-from datetime import datetime
-
+from datetime import datetime, timezone
 
 def render_value(value):
     if value is True:
@@ -31,7 +30,7 @@ def label_metrics(metrics, labels):
 
 def seconds_elapsed_since(timestamp):
     if timestamp:
-        now = datetime.utcnow()
+        now = datetime.now(timezone.utc)
         return (now - timestamp).total_seconds()
     else:
         return None
