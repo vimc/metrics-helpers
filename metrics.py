@@ -31,7 +31,7 @@ def label_metrics(metrics, labels):
 def seconds_elapsed_since(timestamp):
     if timestamp:
         now = datetime.now().timestamp()
-        return (now - timestamp).total_seconds()
+        return (now - timestamp)
     else:
         return None
 
