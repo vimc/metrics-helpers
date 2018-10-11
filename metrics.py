@@ -1,4 +1,6 @@
 from flask import Response
+from dateutil import parser
+from datetime import datetime
 
 
 def render_value(value):
@@ -25,3 +27,18 @@ def label_metrics(metrics, labels):
     for k, v in metrics.items():
         labelled[k + label] = v
     return labelled
+
+
+def seconds_elapsed_since(timestamp):
+    if timestamp:
+        now = datetime.now().timestamp()
+        return now - timestamp
+    else:
+        return None
+
+
+def parse_timestamp(raw):
+    if raw and raw != "None":
+        return parser.parse(raw)
+    else:
+        return None
