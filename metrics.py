@@ -1,4 +1,3 @@
-from flask import Response
 from dateutil import parser
 from datetime import datetime
 
@@ -16,7 +15,7 @@ def render_metrics(metrics):
     output = ""
     for k, v in metrics.items():
         output += "{k} {v}\n".format(k=k, v=render_value(v))
-    return Response(output, mimetype='text/plain')
+    return output
 
 
 def label_metrics(metrics, labels):
