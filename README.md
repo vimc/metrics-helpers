@@ -1,11 +1,11 @@
-# montagu-metrics-py
+# metrics-utils
 Helper functions for creating metric exporters for Prometheus.
 
 Use like so:
 
 1. Add the submodule at some local path, let's say `metrics`
    ```
-   git submodule add https://github.com/vimc/montagu-metrics-py metrics
+   git submodule add https://github.com/vimc/metrics-utils metrics
    ```
 2. Add to your build/whatever script:
    ```
